@@ -3,7 +3,28 @@
 body {
   background-color: #EEE;
   font-family: 'Source Sans Pro', sans-serif;
-  h1 {
-    color: #244751;
+
+  header {
+    background-color: lightsalmon;
+  }
+
+  nav {
+    font-family: 'Bungee', cursive;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    padding: 50px 50px;
+  }
+
+  .restaurant_name {
+    margin-top:20px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+  .space_between {
+    width: 3rem;
   }
 }
