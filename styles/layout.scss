@@ -5,7 +5,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 
   header {
-    background-color: lightsalmon;
+    background-color: BlanchedAlmond;
   }
 
   nav {
@@ -17,14 +17,23 @@ body {
     padding: 50px 50px;
   }
 
-  .restaurant_name {
+  .restaurant-name {
     margin-top:20px;
     display: flex;
     justify-content:space-around;
     align-items: center;
   }
 
-  .space_between {
+  .space-between {
     width: 3rem;
+  }
+
+  .menu-category {
+    margin: 50px;
+    background-color: #EEE;
+    border: 2px solid darkblue;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
   }
 }
