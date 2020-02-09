@@ -14,7 +14,7 @@ body {
     justify-content:space-between;
     align-items: center;
 
-    padding: 50px 50px;
+    padding: 20px 50px;
   }
 
   .restaurant-name {
@@ -22,6 +22,16 @@ body {
     display: flex;
     justify-content:space-around;
     align-items: center;
+  }
+
+  .restaurant-name h2 {
+    font-size: 2.5rem;
+  }
+
+  .restaurant-name h2 span {
+    font-size:1.5rem;
+    font-family: 'Source Sans Pro';
+    height: 120%;
   }
 
   .space-between {
@@ -35,5 +45,48 @@ body {
     padding: 20px 20px;
     text-align: center;
     font-family: 'Bungee', cursive;
+  }
+
+  .meal-items {
+    margin: 50px;
+    background-color: #EEE;
+    border: 2px solid darkblue;
+    padding: 20px 0px;
+    margin: 0px 100px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  span.heading p {
+    text-align: justify;
+  }
+
+  .quantity-price {
+    padding-left: 0 px;
+  }
+
+  div.row.meal-items-row {
+    margin-right: 0px;
+  }
+
+  div.col-lg-8.meal-items-row-description {
+    margin-top: 20px;
+    border: 2px solid gray;
+  }
+
+  div.col-lg-9.meal-items-row-container {
+
+    border: 2px solid gray;
+  }
+
+  div.col-lg-3.price-quantity {
+    border: 2px solid gray;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
