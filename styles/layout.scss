@@ -47,12 +47,14 @@ body {
     font-family: 'Bungee', cursive;
   }
 
+  /* meal-items-containers */
+
   .meal-items {
     margin: 50px;
     background-color: #EEE;
     border: 2px solid darkblue;
     padding: 20px 0px;
-    margin: 0px 100px;
+    margin: 50px 100px;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem;
@@ -88,5 +90,56 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
+  }
+
+  /* place-order-container */
+  .place-order {
+    margin: 50px;
+    background-color: #EEE;
+    border: 2px solid darkblue;
+    padding: 20px 0px;
+    margin: 50px 100px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  div.row.nested-place-order-row {
+    border: 2px solid darkblue;
+    margin: 0px 30px;
+  }
+
+  div.col-lg-7.total-price {
+    border: 2px solid darkblue;
+    text-align: center;
+    padding: 20px 0px;
+  }
+
+  div.col-lg-3.place-order {
+    border: 1px solid darkblue;
+    margin: 0px;
+  }
+  div.row.place-order-tip div {
+    border: 1px solid darkblue;
+  }
+
+  div.row.nested-tip-row {
+    border: 1px solid darkblue;
+    margin: 0px 30px;
+
+  }
+
+  div.col-lg-1.tip {
+    border: 1px solid darkblue;
+    padding: 10px 0px;
+    margin: 0px 10px;
+
+  }
+  div.col-lg-2.tip {
+    margin: 0px 10px;
+
+    border: 1px solid darkblue;
+    padding: 10px 0px;
   }
 }

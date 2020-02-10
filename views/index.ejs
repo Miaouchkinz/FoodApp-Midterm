@@ -39,12 +39,13 @@
     </nav>
   </header>
   <main>
+
+    <!-- menu category container -->
+
     <section class="menu-category">
       <div class="conainer-lg">
         <div class="row">
-          <!--
-          <div class="col-lg-2"></div>
-          -->
+
           <div class="col-lg-3 sandwich">
             <img src="/images/sandwich7.png" alt="sandwich">
             <p>sandwich</p>
@@ -66,12 +67,12 @@
       </div>
     </section>
 
+    <!-- meal-items-containers -->
+
     <section class="meal-items">
       <div class="conainer-lg">
-
-
         <div class="row meal-items-row">
-          <div class="col-lg-3 sandwich">
+          <div class="col-lg-3">
             <img src="/images/sandwich7.png" alt="BLT">
           </div>
 
@@ -82,43 +83,76 @@
                           <p>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi officiis ratione unde voluptatibus sapiente deserunt voluptate culpa nam non suscipit architecto, eos ullam perspiciatis, quasi laboriosam tenetur neque facere aliquam.
                           </p>
-                        </span>
+                      </span>
                   </div>
                   <div class="col-lg-1">
                   </div>
                   <div class="col-lg-3 price-quantity">
                     <span>
-                      <div>
-                        quantity
-                      </div>
                       <p>
-                        price
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-success">+</button>
+                              <button type="button" class="btn btn-light">0</button>
+                              <button type="button" class="btn btn-danger">-</button>
+                            </div>
+                      </p>
+                      <p>
+                        $ 0.00
                       </p>
                     </span>
                   </div>
               </div>
-
           </div>
           </div>
-
         </div>
-
       </div>
+    </section>
 
-        <!--
-          <span class="heading">
-            Heading
-          </span>
-          <span class="heading">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi officiis ratione unde voluptatibus sapiente deserunt voluptate culpa nam non suscipit architecto, eos ullam perspiciatis, quasi laboriosam tenetur neque facere aliquam.
-          </span>
-          <span class="quantity_price">
-            quantity, price
-          </span>
+    <!-- place-order-container -->
+    <section class="place-order">
+        <div class="conainer-lg">
+            <div class="row place-order-row">
+                <div class="col-lg-12">
+                    <div class="conainer-lg">
+                      <div class="row nested-place-order-row">
+
+                          <div class="col-lg-7 total-price">
+                            <div class="conainer-lg">
+                            </div>
+                            <p>
+                              Total = $62.40
+                            </p>
+                          </div>
+                          <div class="col-lg-2">
+                              <p>
+
+                              </p>
+                          </div>
+                          <div class="col-lg-3 place-order">
+                              <p>
+place order
+                              </p>
+                          </div>
+                      </div>
+
+                      <div class="row nested-tip-row">
+                          <div class="col-lg-1 tip">10%</div>
+                          <div class="col-lg-1 tip">15%</div>
+                          <div class="col-lg-1 tip">20%</div>
+                          <div class="col-lg-1 tip">25%</div>
+                          <div class="col-lg-2 tip">place order</div>
+                          <div class="col-lg-5"></div>
+
+                      </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        -->
 
     </section>
+
+
   </main>
 
   <!-- Bootstrap JS -->
