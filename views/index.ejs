@@ -17,6 +17,8 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <!-- App JS -->
+    <script type="text/javascript" src="/scripts/menuCategory.js"></script>
+    <script type="text/javascript" src="/scripts/test1.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -47,7 +49,7 @@
         <div class="row">
 
           <div class="col-lg-3 sandwich">
-            <img src="/images/sandwich7.png" alt="sandwich">
+            <img src="/images/sandwich7.png" alt="sandwich" id="sandwich">
             <p>sandwich</p>
           </div>
           <div class="col-lg-3">
@@ -69,43 +71,8 @@
 
     <!-- meal-items-containers -->
 
-    <section class="meal-items">
-      <div class="conainer-lg">
-        <div class="row meal-items-row">
-          <div class="col-lg-3">
-            <img src="/images/sandwich7.png" alt="BLT">
-          </div>
+    <section id="meal-items">
 
-          <div class="col-lg-9 meal-items-row-container">
-              <div class="row meal-items-row">
-                  <div class="col-lg-8 meal-items-row-description">
-                      <span class="heading">
-                          <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi officiis ratione unde voluptatibus sapiente deserunt voluptate culpa nam non suscipit architecto, eos ullam perspiciatis, quasi laboriosam tenetur neque facere aliquam.
-                          </p>
-                      </span>
-                  </div>
-                  <div class="col-lg-1">
-                  </div>
-                  <div class="col-lg-3 price-quantity">
-                    <span>
-                      <p>
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-success">+</button>
-                              <button type="button" class="btn btn-light">0</button>
-                              <button type="button" class="btn btn-danger">-</button>
-                            </div>
-                      </p>
-                      <p>
-                        $ 0.00
-                      </p>
-                    </span>
-                  </div>
-              </div>
-          </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- place-order-container -->
@@ -156,9 +123,11 @@
   </main>
 
   <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+  <!--
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  -->
   </body>
 </html>
