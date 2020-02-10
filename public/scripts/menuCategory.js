@@ -49,12 +49,13 @@ $(document).ready(function () {
   // });
 
     // New tweet HTML format
-    const createMenuItems = function(element) {
-      console.log(element)
-      const menuElement = `<div class="meal-items conainer-lg">
+    const createMenuItems = function(mealItem) {
+      console.log(mealItem);
+      const mealPrice = (mealItem.price / 100).toFixed(2);
+      const $menuElement = `<div class="meal-items conainer-lg">
       <div class="row meal-items-row">
         <div class="col-lg-3">
-          <img src="/images/sandwich7.png" alt="BLT">
+          <h2>${mealItem.name}</h2>
         </div>
 
         <div class="col-lg-9 meal-items-row-container">
@@ -62,7 +63,10 @@ $(document).ready(function () {
                 <div class="col-lg-8 meal-items-row-description">
                     <span class="heading">
                         <p>
-                          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi officiis ratione unde voluptatibus sapiente deserunt voluptate culpa nam non suscipit architecto, eos ullam perspiciatis, quasi laboriosam tenetur neque facere aliquam.
+                        ${mealItem.description}
+                        </p>
+                        <p>
+                        ${mealItem.ingredient_list}
                         </p>
                     </span>
                 </div>
@@ -78,7 +82,7 @@ $(document).ready(function () {
                           </div>
                     </p>
                     <p>
-                      $ 0.00
+                     $ ${mealPrice}
                     </p>
                   </span>
                 </div>
@@ -89,7 +93,7 @@ $(document).ready(function () {
     </div>
     `;
 
-      return $tweet;
+      return $menuElement;
     };
 
 
@@ -97,24 +101,25 @@ $(document).ready(function () {
   // Rendering taken from [{}] Json format
   const renderMenuElements = function (menuItemArray) {
     console.log(menuItemArray);
-    // $menuItems = '';
-    // for (let i = 0; i < menuItemArray.length; i++) {
-    //   let lastMenuItem = menuItemArray.pop();
-    //   $menuItems += createTweetElement(lastMenuItem);
-    // }
-    // $('#meal-items').prepend($menuItems);
+    $menuItems = '';
+    for (let i = 0; i < menuItemArray.length; i++) {
+      let lastMenuItem = menuItemArray.shift();
+      $menuItems += createMenuItems(lastMenuItem);
+      console.log('lastItems:   ',lastMenuItem);
+    }
+    $('#meal-items').prepend($menuItems);
   };
 
-  const loadMenuSandwitch = function () {
+  const loadMenuSandwitch = function (menuItem) {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:8080/api/menu/sandwich'
+      url: `http://localhost:8080/api/menu/${menuItem}`
     })
       .then(renderMenuElements);
   };
 
   $('#sandwich').click(function(){
-    loadMenuSandwitch();
+    loadMenuSandwitch('sandwich');
     // $.ajax('/scripts/test1.js', { method: 'GET' })
     // .then(function (mealItem) {
     //   console.log('Success: ', mealItem);
