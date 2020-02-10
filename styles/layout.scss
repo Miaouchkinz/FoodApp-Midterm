@@ -41,7 +41,7 @@ body {
   .menu-category {
     margin: 50px;
     background-color: #EEE;
-    border: 2px solid darkblue;
+    border: 3px solid gray;
     padding: 20px 20px;
     text-align: center;
     font-family: 'Bungee', cursive;
@@ -50,9 +50,9 @@ body {
   /* meal-items-containers */
 
   .meal-items {
-    margin: 50px;
+
     background-color: #EEE;
-    border: 2px solid darkblue;
+
     padding: 20px 0px;
     margin: 50px 100px;
     text-align: center;
@@ -75,16 +75,16 @@ body {
 
   div.col-lg-8.meal-items-row-description {
     margin-top: 20px;
-    border: 2px solid gray;
+
   }
 
   div.col-lg-9.meal-items-row-container {
 
-    border: 2px solid gray;
+    border: 3px solid gray;
   }
 
   div.col-lg-3.price-quantity {
-    border: 2px solid gray;
+    border: 3px solid gray;
     margin-top: 20px;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
@@ -96,7 +96,7 @@ body {
   .place-order {
     margin: 50px;
     background-color: #EEE;
-    border: 2px solid darkblue;
+    border: 2px solid gray;
     padding: 20px 0px;
     margin: 50px 100px;
     text-align: center;
@@ -106,32 +106,31 @@ body {
   }
 
   div.row.nested-place-order-row {
-    border: 2px solid darkblue;
     margin: 0px 30px;
   }
 
   div.col-lg-7.total-price {
-    border: 2px solid darkblue;
+    border: 3px solid gray;
     text-align: center;
     padding: 20px 0px;
   }
 
   div.col-lg-3.place-order {
-    border: 1px solid darkblue;
+    border: 3px solid gray;
     margin: 0px;
+    margin-top: 30px;
   }
   div.row.place-order-tip div {
-    border: 1px solid darkblue;
+    border: 3px solid darkblue;
   }
 
   div.row.nested-tip-row {
-    border: 1px solid darkblue;
     margin: 0px 30px;
 
   }
 
   div.col-lg-1.tip {
-    border: 1px solid darkblue;
+    border: 3px solid gray;
     padding: 10px 0px;
     margin: 0px 10px;
 
@@ -139,7 +138,7 @@ body {
   div.col-lg-2.tip {
     margin: 0px 10px;
 
-    border: 1px solid darkblue;
+    border: 3px solid gray;
     padding: 10px 0px;
   }
 }
