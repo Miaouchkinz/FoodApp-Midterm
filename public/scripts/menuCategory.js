@@ -54,8 +54,8 @@ $(document).ready(function () {
       const mealPrice = (mealItem.price / 100).toFixed(2);
       const $menuElement = `<div class="meal-items conainer-lg">
       <div class="row meal-items-row">
-        <div class="col-lg-3">
-          <h2>${mealItem.name}</h2>
+        <div class="col-lg-3 my-auto">
+          <h3>${mealItem.name}</h3>
         </div>
 
         <div class="col-lg-9 meal-items-row-container">
@@ -65,21 +65,21 @@ $(document).ready(function () {
                         <p>
                         ${mealItem.description}
                         </p>
-                        <p>
-                        ${mealItem.ingredient_list}
-                        </p>
+                        <p><i>
+                        Ingredients: ${mealItem.ingredient_list}
+                        </i></p>
                     </span>
                 </div>
                 <div class="col-lg-1">
                 </div>
-                <div class="col-lg-3 price-quantity">
+                <div class="col-lg-3 price-quantity my-auto">
                   <span>
                     <p>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-success">+</button>
-                            <button type="button" class="btn btn-light">0</button>
-                            <button type="button" class="btn btn-danger">-</button>
-                          </div>
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                          <button type="button" class="btn btn-success">-</button>
+                          <button type="button" class="btn btn-light">0</button>
+                          <button type="button" class="btn btn-danger">+</button>
+                      </div>
                     </p>
                     <p>
                      $ ${mealPrice}
