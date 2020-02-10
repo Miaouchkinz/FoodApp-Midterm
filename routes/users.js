@@ -7,13 +7,14 @@
 
 const express = require('express');
 const router  = express.Router();
+const dbHelpers = require('./dbHelpers');
 
-module.exports = (db) => {
+const usersRoutes = (db) => {
+  const {getAllUsers} = dbHelpers(db);
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
-        res.json({ users });
+    getAllUsers()
+      .then(users => {
+        res.status(201).json({ users })
       })
       .catch(err => {
         res
@@ -21,5 +22,8 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
   return router;
 };
+
+module.exports = usersRoutes;
