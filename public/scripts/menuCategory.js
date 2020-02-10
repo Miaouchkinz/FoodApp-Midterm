@@ -119,15 +119,24 @@ $(document).ready(function () {
   };
 
   $('#sandwich').click(function(){
+    $('.meal-items').remove();
     loadMenuSandwitch('sandwich');
-    // $.ajax('/scripts/test1.js', { method: 'GET' })
-    // .then(function (mealItem) {
-    //   console.log('Success: ', mealItem);
-    //   $('#meal-items').prepend(mealItem);
-    // });
-
   });
 
+  $('#soup').click(function(){
+    $('.meal-items').remove();
+    loadMenuSandwitch('soup');
+  });
+
+  $('#salad').click(function(){
+    $('.meal-items').remove();
+    loadMenuSandwitch('salad');
+  });
+
+  $('#drinks').click(function(){
+    $('.meal-items').remove();
+    loadMenuSandwitch('drinks');
+  });
 
 });
 
