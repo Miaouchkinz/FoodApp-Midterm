@@ -48,7 +48,6 @@ $(document).ready(function () {
   };
 
 
-
   // Rendering taken from [{}] Json format
   const renderMenuElements = function (menuItemArray) {
 
@@ -60,7 +59,7 @@ $(document).ready(function () {
     $(".add-to-cart").click(attachCartHandler);
   };
 
-  const loadMenuSandwitch = function (menuItem) {
+  const getMenuItemsByCategory = function (menuItem) {
     $.ajax({
       method: 'GET',
       url: `http://localhost:8080/api/menu/${menuItem}`
@@ -70,22 +69,22 @@ $(document).ready(function () {
 
   $('#sandwich').click(function(){
     $('.meal-items').remove();
-    loadMenuSandwitch('sandwich');
+    getMenuItemsByCategory('sandwich');
   });
 
   $('#soup').click(function(){
     $('.meal-items').remove();
-    loadMenuSandwitch('soup');
+    getMenuItemsByCategory('soup');
   });
 
   $('#salad').click(function(){
     $('.meal-items').remove();
-    loadMenuSandwitch('salad');
+    getMenuItemsByCategory('salad');
   });
 
   $('#drinks').click(function(){
     $('.meal-items').remove();
-    loadMenuSandwitch('drinks');
+    getMenuItemsByCategory('drinks');
   });
 
 });
