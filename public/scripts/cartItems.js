@@ -45,6 +45,14 @@ $(document).ready(() => {
     $('#meal-items').prepend($cartContainer);
   };
 
+  const calculateSubTotal = () => {
+    let sum = 0;
+    $('.item-price').each((index, item) => {
+      sum += Number($(item).text());
+    });
+    $('.sub-total-cost').text(sum.toFixed(2));
+  };
+
   $('.cart > img').click(() => {
     console.log('you clicked the cart!')
     // remove menu items
@@ -59,4 +67,4 @@ $(document).ready(() => {
     calculateSubTotal();
   });
 
-})
+});
