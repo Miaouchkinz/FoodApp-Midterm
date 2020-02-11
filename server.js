@@ -62,6 +62,10 @@ app.get('/login/:id', (req, res) => {
   res.redirect('/');
  });
 
+app.get("/admin", (req, res) => {
+  res.status(201).render("index");
+});
+
 app.get("/", (req, res) => {
   res.render("index");
 });
