@@ -53,18 +53,41 @@ $(document).ready(() => {
     $('.sub-total-cost').text(sum.toFixed(2));
   };
 
+  const calculateTip = (percentage) => {
+    let tipValue = percentage * Number($('.sub-total-cost').text());
+    $('.total-tip').text(tipValue.toFixed(2));
+    calculateTotalCost();
+  }
+
+  const calculateTotalCost = () => {
+    let totalCost = Number($('.sub-total-cost').text()) + Number($('.total-tip').text());
+    $('.total-cost').text(totalCost.toFixed(2));
+  }
+
   $('.cart > img').click(() => {
-    console.log('you clicked the cart!')
-    // remove menu items
     $('.meal-items').remove();
-    // hide categories
     $('.menu-category').hide();
-    // render cart items
     renderCartElements();
-    // show place-order checkout container
     $('.place-order').show();
-    // calculate sub-total of cart items
+
     calculateSubTotal();
+    calculateTotalCost();
+  });
+
+  $('.10-tip').click(() => {
+    calculateTip(0.10);
+  });
+
+  $('.15-tip').click(() => {
+    calculateTip(0.15);
+  });
+
+  $('.20-tip').click(() => {
+    calculateTip(0.20);
+  });
+
+  $('.25-tip').click(() => {
+    calculateTip(0.25);
   });
 
 });
