@@ -8,10 +8,22 @@ const addItemToCart = (id, mealItemsArray) => {
     checkAddedItem.qty += 1;
     localStorage.setItem(JSON.stringify(id), JSON.stringify(checkAddedItem));
   }
+
+  // Add to counter as items are added to cart
+  let sum = 0;
+  const cartCounter = () => {
+    for(let i =0; i < localStorage.length; i++){
+      let mealItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+      sum += mealItem.qty;
+    }
+    $('#cart-counter').text(0 + sum);
+  }
+
+  return cartCounter();
+
 }
 
 const attachCartHandler = (e) => {
-  console.log(e.target);
   $.ajax({
     method: 'GET',
     url: '/api/menu/'
