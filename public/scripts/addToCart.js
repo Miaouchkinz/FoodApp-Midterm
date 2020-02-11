@@ -9,18 +9,17 @@ const addItemToCart = (id, mealItemsArray) => {
     localStorage.setItem(JSON.stringify(id), JSON.stringify(checkAddedItem));
   }
 
-  // Add to counter as items are added to cart
-  let sum = 0;
-  const cartCounter = () => {
-    for(let i =0; i < localStorage.length; i++){
-      let mealItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
-      sum += mealItem.qty;
-    }
-    $('#cart-counter').text(0 + sum);
-  }
-
   return cartCounter();
+}
 
+// Add to counter as items are added to cart
+const cartCounter = () => {
+  let sum = 0;
+  for (let i =0; i < localStorage.length; i++) {
+    let mealItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    sum += mealItem.qty;
+  }
+  $('#cart-counter').text(0 + sum);
 }
 
 const attachCartHandler = (e) => {
