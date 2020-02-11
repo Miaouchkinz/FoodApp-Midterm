@@ -1,10 +1,4 @@
-// $(() => {
-//   // $.ajax({
-//   //   method: "GET",
-//   //   url: "/api/users"
-//   // }).done((userData) => {
-//   //   for(user of userData.users) {
-//   //     $("<div>").text(user.name).appendTo($("body"));
-//   //   }
-//   // });;
-// });
+$(() => {
+  // Ensures the cart count is still there on page load
+  cartCounter();
+});
