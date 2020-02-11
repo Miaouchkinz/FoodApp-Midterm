@@ -2,8 +2,149 @@
 
 body {
   background-color: #EEE;
+  font-family: 'Source Sans Pro', sans-serif;
 
-  h1 {
-    color: #244751;
+  header {
+    background-color: BlanchedAlmond;
+  }
+
+  nav {
+    font-family: 'Bungee', cursive;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+  }
+
+  .restaurant-name {
+    margin-top:20px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+  .restaurant-name h2 {
+    font-size: 2.5rem;
+  }
+
+
+  .space-between {
+    width: 3rem;
+  }
+
+  .menu-category {
+    margin: 50px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 3px solid gray;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  }
+
+  /* meal-items-containers */
+
+  .meal-items {
+    background-color: #EEE;
+    border-radius: 10px;
+    padding: 20px 0px;
+    margin: 50px 100px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .col-lg-3.my-auto h3 {
+    font-family: 'Bungee', cursive;
+  }
+
+  span.heading p {
+    text-align: justify;
+  }
+
+  .quantity-price {
+    padding-left: 0 px;
+  }
+
+  div.row.meal-items-row {
+    margin-right: 0px;
+  }
+
+  div.col-lg-8.meal-items-row-description {
+    margin-top: 20px;
+
+  }
+
+  div.col-lg-9.meal-items-row-container {
+    border: 3px solid gray;
+    border-radius: 10px;
+  }
+
+  div.col-lg-3.price-quantity {
+    border: 3px solid gray;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* place-order-container */
+  .place-order {
+    margin: 50px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 2px solid gray;
+    padding: 20px 0px;
+    margin: 50px 100px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  div.row.meal-items-row {
+    padding: 5px 0px;
+  }
+
+  div.row.nested-place-order-row {
+    margin: 0px 30px;
+  }
+
+  div.col-lg-7.total-price {
+    border: 3px solid gray;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 0px;
+  }
+
+  div.col-lg-3.place-order {
+    border: 3px solid gray;
+    margin: 0px;
+    margin-top: 30px;
+  }
+  div.row.place-order-tip div {
+    border: 3px solid darkblue;
+  }
+
+  div.row.nested-tip-row {
+    margin: 0px 30px;
+
+  }
+
+  div.col-lg-1.tip {
+    border: 3px solid gray;
+    padding: 10px 0px;
+    margin: 0px 5px;
+
+  }
+  div.col-lg-2.tip {
+    margin: 0px 10px;
+
+    border: 3px solid gray;
+    padding: 10px 0px;
   }
 }

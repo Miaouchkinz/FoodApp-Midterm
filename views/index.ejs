@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <!-- Meta Information -->
+    <title>Food App</title>
 
+    <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Righteous|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6ba3f5c144.js" crossorigin="anonymous"></script>
 
+    <!-- Vendor JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="/scripts/addToCart.js"></script>
   </head>
 
@@ -19,5 +26,121 @@
     <button type = "button" class= "add-to-cart" id="2"> Click to add Cart!</button>
     <button type = "button" class= "add-to-cart" id="3"> Click to add Cart!</button>
     <button type = "button" class= "add-to-cart" id="4"> Click to add Cart!</button>
+=======
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/menuCategory.js"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+  <header>
+    <nav>
+
+      <div></div>
+
+      <div class="restaurant-name">
+        <img src="/images/dragon12.png" alt="dragon">
+        <span class="space-between"></span>
+        <h2>Camilo<span>'s</span> Cafe</h2>
+      </div>
+
+        <img src="/images/cart7.png" alt="Cart">
+    </nav>
+  </header>
+  <main>
+
+    <!-- menu category container -->
+
+    <section class="menu-category">
+      <div class="conainer-lg">
+        <div class="row">
+
+          <div class="col-lg-3 sandwich" id="sandwich">
+            <img src="/images/sandwich7.png" alt="sandwich">
+            <p>sandwich</p>
+          </div>
+          <div class="col-lg-3" id="soup">
+            <img src="/images/soup2.png" alt="soup">
+            <p>soup</p>
+          </div>
+          <div class="col-lg-3" id="salad">
+            <img src="/images/salad2.png" alt="salad">
+            <p>salad</p>
+          </div>
+          <div class="col-lg-3" id="drinks">
+            <img src="/images/drink2.png" alt="drink">
+            <p>drink</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- meal-items-containers -->
+
+    <section id="meal-items">
+
+    </section>
+
+    <!-- place-order-container -->
+    <section class="place-order">
+        <div class="conainer-lg">
+            <div class="row place-order-row">
+                <div class="col-lg-12">
+                    <div class="conainer-lg">
+                      <div class="row nested-place-order-row">
+
+                          <div class="col-lg-7 total-price">
+                            <div class="conainer-lg">
+                            </div>
+                            <p>
+                              Total = $62.40
+                            </p>
+                          </div>
+                          <div class="col-lg-2">
+                              <p>
+
+                              </p>
+                          </div>
+                          <div class="col-lg-3 place-order">
+                              <p>
+                              place order
+                              </p>
+                          </div>
+                      </div>
+
+                      <div class="row nested-tip-row">
+                          <div class="col-lg-1 tip">10%</div>
+                          <div class="col-lg-1 tip">15%</div>
+                          <div class="col-lg-1 tip">20%</div>
+                          <div class="col-lg-1 tip">25%</div>
+                          <div class="col-lg-2 tip">place order</div>
+                          <div class="col-lg-5"></div>
+
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+  </main>
+
+  <!-- Bootstrap JS -->
+  <!--
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  -->
+>>>>>>> master
   </body>
 </html>
