@@ -1,12 +1,12 @@
 const addItemToCart = (id, mealItemsArray) => {
   const mealItem = mealItemsArray.find(item => item['id'].toString() === id);
-  let checkItemExist = JSON.parse(localStorage.getItem(JSON.stringify(id)));
+  let checkAddedItem = JSON.parse(localStorage.getItem(JSON.stringify(id)));
 
-  if (!checkItemExist) {
+  if (!checkAddedItem) {
     localStorage.setItem(JSON.stringify(id), JSON.stringify({...mealItem, qty: 1}));
   } else {
-    checkItemExist.qty += 1;
-    localStorage.setItem(JSON.stringify(id), JSON.stringify(checkItemExist));
+    checkAddedItem.qty += 1;
+    localStorage.setItem(JSON.stringify(id), JSON.stringify(checkAddedItem));
   }
 }
 
