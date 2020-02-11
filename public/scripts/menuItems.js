@@ -47,7 +47,6 @@ $(document).ready(function () {
     return $menuElement;
   };
 
-
   // Rendering taken from [{}] Json format
   const renderMenuElements = function (menuItemArray) {
 
