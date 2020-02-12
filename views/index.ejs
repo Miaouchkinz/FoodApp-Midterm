@@ -14,12 +14,6 @@
 
     <!-- Vendor JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/menuCategory.js"></script>
-    <script type="text/javascript" src="/scripts/restaurantViewsRender.js"></script>
-
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -30,15 +24,19 @@
   <header>
     <nav>
 
-      <div></div>
+      <div>
+        <a href="/login/1">Login: Client #1</a>
+      </div>
 
       <div class="restaurant-name">
         <img src="/images/dragon-orange5.png" alt="dragon">
         <span class="space-between"></span>
         <h2>Camilo<span>'s</span> Cafe</h2>
       </div>
-
+      <div class="cart">
+        <span id="cart-counter">0</span>
         <img src="/images/cart7.png" alt="Cart">
+      </div>
     </nav>
   </header>
   <main>
@@ -101,7 +99,13 @@
                             <div class="conainer-lg">
                             </div>
                             <p>
-                              Total = $62.40
+                              Sub-total = $<span class="sub-total-cost">0</span>
+                            </p>
+                            <p>
+                              Tip = $<span class="total-tip">0</span>
+                            </p>
+                            <p>
+                              Total = $<span class="total-cost">0</span>
                             </p>
                           </div>
                           <div class="col-lg-2">
@@ -110,18 +114,16 @@
                               </p>
                           </div>
                           <div class="col-lg-3 place-order">
-                              <p>
-                              place order
-                              </p>
+                            <button type="button" id="place-order" class="btn btn btn-success btn-lg"> Place Order </button>
                           </div>
                       </div>
 
                       <div class="row nested-tip-row">
-                          <div class="col-lg-1 tip">10%</div>
-                          <div class="col-lg-1 tip">15%</div>
-                          <div class="col-lg-1 tip">20%</div>
-                          <div class="col-lg-1 tip">25%</div>
-                          <div class="col-lg-2 tip">place order</div>
+                          <div class="col-lg-2 tip">Add Tip: </div>
+                          <button type="button" class="btn btn-outline-info col-lg-1 10-tip">10%</button>
+                          <button type="button" class="btn btn-outline-info col-lg-1 15-tip">15%</button>
+                          <button type="button" class="btn btn-outline-info col-lg-1 20-tip">20%</button>
+                          <button type="button" class="btn btn-outline-info col-lg-1 25-tip">25%</button>
                           <div class="col-lg-5"></div>
 
                       </div>
@@ -168,6 +170,11 @@
     </section>
   </main>
 
+   <!-- App JS -->
+   <script type="text/javascript" src="/scripts/cartItems.js"></script>
+   <script type="text/javascript" src="/scripts/menuItems.js"></script>
+   <script type="text/javascript" src="/scripts/addToCart.js"></script>
+   <script type="text/javascript" src="/scripts/app.js"></script>
 
   </body>
 </html>

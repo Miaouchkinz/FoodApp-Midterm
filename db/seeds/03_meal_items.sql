@@ -155,7 +155,7 @@ VALUES
   'Coke Cola',
   'A refreshing beverage.',
   'cola',
-  2,
+  200,
   null,
   4
 ),
@@ -164,7 +164,7 @@ VALUES
   'Stout #70',
   'A delicious dark stout from your local Brasserie Harricana, 6.0%.',
   'beer',
-  6,
+  600,
   null,
   4
 ),
@@ -173,7 +173,7 @@ VALUES
   'Stella',
   'A refreshing beverage.',
   'beer',
-  6,
+  600,
   null,
   4
 ),
@@ -182,7 +182,7 @@ VALUES
   'Ginger Kombucha',
   'A refreshing beverage.',
   'kombucha',
-  4,
+  400,
   null,
   4
 ),
@@ -191,7 +191,7 @@ VALUES
   'Smoothie Surprise',
   'Special of the day: blueberry, banana, almond milk, and maple syrup.',
   'blueberry, banana, almond milk, maple syrup',
-  6,
+  600,
   null,
   4
 );

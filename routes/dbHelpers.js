@@ -14,7 +14,11 @@ const dbHelpers = db => {
     `, [category])
   }
 
-  return {getAllUsers, getMenuItemsByCategory};
+  const getAllMenuItems = () => {
+    return db.query(`SELECT * FROM meal_items`)
+  }
+
+  return {getAllUsers, getMenuItemsByCategory, getAllMenuItems};
 }
 
 module.exports = dbHelpers;
