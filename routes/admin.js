@@ -17,7 +17,7 @@ const adminRoutes = (db) => {
     orderComplete,
     orderPaid
   } = dbHelpers(db);
-  // admin/orders/upcoming
+  // api/admin/orders/upcoming
   router.get("/orders/upcoming", (req, res) => {
     getUpcomingOrders()
       .then( (upcomingOrders) => {
@@ -29,7 +29,7 @@ const adminRoutes = (db) => {
           .json( {error: err.message} )
       });
   });
-  // admin/orders/ready_for_pickup
+  // api/admin/orders/ready_for_pickup
   router.get("/orders/ready_for_pickup", (req, res) => {
     getCompletedOrders()
       .then( (completedOrders) => {
@@ -41,7 +41,7 @@ const adminRoutes = (db) => {
           .json( {error: err.message} )
       });
   });
-  // admin/orders/latest_order
+  // api/admin/orders/latest_order
   router.get("/orders/latest_order", (req, res) => {
     getLatestOrder()
       .then( (latestOrder) => {
@@ -53,6 +53,8 @@ const adminRoutes = (db) => {
           .json( {error: err.message} )
       });
   });
+  // /api/admin/orders/:id
+  // update order to complete & update order to paid
   router.post("/orders/:id", (req, res) => {
     let data = {
       order_id: req.params.id,
