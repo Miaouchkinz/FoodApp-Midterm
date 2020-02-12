@@ -56,10 +56,25 @@ const dbHelpers = db => {
     JOIN orders ON order_id = orders.id
     JOIN clients ON client_id = clients.id
     WHERE orders.is_complete = false
-    AND ;
+    ORDER BY orders.id DESC
+    LIMIT 1;
     `)
-    // desc order
-    // limit 1;
+  };
+
+  const orderComplete = (id) => {
+    return db.query(`
+    UPDATE orders
+    SET is_complete = true
+    WHERE id = $1
+    `, [id])
+  };
+
+  const orderPaid = (id) => {
+    return db.query(`
+    UPDATE orders
+    SET is_paid = true
+    WHERE id = $1
+    `, [id])
   };
 
   return {
@@ -68,7 +83,9 @@ const dbHelpers = db => {
     getAllMenuItems,
     getUpcomingOrders,
     getCompletedOrders,
-    getLatestOrder
+    getLatestOrder,
+    orderComplete,
+    orderPaid
   };
 }
 
