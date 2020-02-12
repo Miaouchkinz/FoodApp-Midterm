@@ -61,21 +61,21 @@ const createTipHandlers = () => {
   $('.25-tip').click(() => {
     calculateTip(0.25);
   });
+}
 
-  const hideMenuPage = () => {
-    $('.meal-items').remove();
-    $('.menu-category').hide();
-    $('.place-order').show();
-  }
+const hideMenuPage = () => {
+  $('.meal-items').remove();
+  $('.menu-category').hide();
+  $('.place-order').show();
+}
 
-  const openCheckoutHandler = () => {
-    $('.cart > img').click(() => {
-      hideMenuPage();
-      renderCartElements();
+const openCheckoutHandler = () => {
+  $('.cart > img').click(() => {
+    hideMenuPage();
+    renderCartElements();
 
-      calculateSubTotal();
-      calculateTotalCost();
-    });
-  }
+    calculateSubTotal();
+    calculateTotalCost();
+  });
 }
 
