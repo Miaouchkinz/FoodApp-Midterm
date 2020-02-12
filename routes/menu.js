@@ -20,7 +20,7 @@ const menuRoutes = (db) => {
       })
       .catch(err => {
         res
-          .status(500) // TOFIX: check to see what status code to use here.
+          .status(500)
           .json( {error: err.message})
       });
   });
@@ -32,7 +32,7 @@ const menuRoutes = (db) => {
       })
       .catch(err => {
         res
-          .status(500) // TOFIX: check to see what status code to use here.
+          .status(500)
           .json( {error: err.message})
       });
   });
