@@ -55,7 +55,7 @@ $(document).ready(function () {
       $menuItems += createMenuItems(menuItemArray[i]);
     }
     $('#meal-items').prepend($menuItems);
-    $(".add-to-cart").click(attachCartHandler);
+    $(".add-to-cart").click(addToCartHandler);
   };
 
   const getMenuItemsByCategory = function (menuItem) {
