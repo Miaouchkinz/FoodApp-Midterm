@@ -170,7 +170,7 @@ $(document).ready(function () {
 
   $('#render-restaurant-views').click(function(){
     $('.meal-items').remove();
-    $('.meal-category').remove();
+    $('.menu-category').remove();
     loadRestaurantViews('sandwich');
   });
 
