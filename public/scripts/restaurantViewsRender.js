@@ -2,7 +2,7 @@ $(document).ready(function () {
   // $('.place-order').hide();
   // $('.waiting').hide();
 
-  // New tweet HTML format
+  // New restaurantViews HTML format
   const createRestaurantViews = function(mealItem) {
     // console.log(mealItem);
 
@@ -132,7 +132,11 @@ $(document).ready(function () {
 };
 
 
+// New upcoming HTML format
+const createUpcoming = function(upcoming) {
+  console.log('createUpcoming', upcoming);
 
+};
 
 
 
@@ -188,14 +192,14 @@ $(document).ready(function () {
 
 
 
-  // Rendering taken from [{}] Json format
+  // Rendering loadRestaurantViews taken from [{}] Json format
   const renderRestaurantViews = function (pickupArray) {
     // console.log(pickupArray)
     $restaurantViews = createRestaurantViews();
     $('#restaurant-views').prepend($restaurantViews);
   };
 
-  //
+  // AJAX for rendering loadRestaurantViews
   const loadRestaurantViews = function (menuItem) {
     $.ajax({
       method: 'GET',
@@ -204,10 +208,32 @@ $(document).ready(function () {
       .then(renderRestaurantViews);
   };
 
+
+
+
+  // Rendering loadRestaurantViews taken from [{}] Json format
+  const renderUpcoming = function (upcomingArray) {
+    console.log('renderUpcoming: ',upcomingArray)
+    // $upComing = createUpcoming();
+
+    // $('#restaurant-views').prepend($restaurantViews);
+  };
+
+  // Rendering upcoming order
+  const loadUpcoming = function (menuItem) {
+    $.ajax({
+      method: 'GET',
+      url: `http://localhost:8080/api/admin/orders/upcoming`
+    })
+      .then(renderUpcoming);
+  };
+
+
   $('#render-restaurant-views').click(function(){
     $('.meal-items').remove();
     $('.menu-category').remove();
     loadRestaurantViews('sandwich');
+    loadUpcoming();
   });
 
   $('#hide-restaurant-views').click(function(){
