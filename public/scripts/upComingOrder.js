@@ -1,13 +1,22 @@
 $(document).ready(function () {
 // New upcoming HTML format
 const createUpcoming = function(upcoming) {
-  console.log('createUpcoming', upcoming);
   const name = upcoming.name;
   const order_number = upcoming.order_number;
-  // const item_qty = upcoming.item_qty;
   const meal_item = upcoming.meal_item;
   const pic_id = (order_number % 3) + 1;
-  console.log('pic_id:  ', pic_id);
+  const quantity = upcoming.item_qty
+  // console.log('pic_id:  ', pic_id);
+  // let meal_item = '<li>';
+  let eachMeal_item = '';
+  // (upcoming.meal_items).forEach(element => meals += '<ul>' + element + '<ul>');
+  for (let element of upcoming.meal_item) {
+    eachMeal_item += `<p>${element} &nbsp  ${quantity}<p>`;
+  }
+  // eachMeal_item += '';
+  // console.log('upcoming:  ', upcoming);
+  console.log('eachMeal_item: ', eachMeal_item);
+  // console.log('meals: ', meals);
   const upcomingHTML = `
   <section class="upcomming-order">
   <div class="conainer-lg">
@@ -20,9 +29,9 @@ const createUpcoming = function(upcoming) {
       </div>
       <div class="col-lg-6 my-auto align-middle">
         <p class="takeOrderNumber">Order Number: ${order_number}</p>
-        <div class="text-middle">
+        <div class="text-left">
           <p>
-            ${meal_item}
+            ${eachMeal_item}
           </p>
 
         </div>
@@ -43,13 +52,38 @@ const createUpcoming = function(upcoming) {
   return upcomingHTML;
 };
 
+  // Transform Array Object: combine same order id and change meal_item as array
+  // Thank you. Jess
+  const combineArr = function(arr) {
+    combinedArray = arr.reduce(function (acc, obj){
+
+      // is it empty?
+      if(acc.length === 0) {
+        acc.push(obj)
+      } else if (acc.filter(x => obj.order_number === x.order_number).length !== 0) {
+        for(let i = 0; i < acc.length; i++) {
+          if (acc[i].order_number === obj.order_number) {
+            if (Array.isArray(acc[i].meal_item)) {
+              acc[i].meal_item.push(obj.meal_item)
+            } else {
+           acc[i].meal_item = [acc[i].meal_item, obj.meal_item]
+               }
+          }
+        }
+      } else {
+        acc.push(obj)
+      }
+      return acc;
+    }, []);
+    return combinedArray;
+  };
+
   // Rendering loadRestaurantViews taken from [{}] Json format
   const renderUpcoming = function (upcomingArray) {
-    console.log('renderUpcoming: ',upcomingArray)
-    // $upComing = createUpcoming();
+    const transformedArray = combineArr(upcomingArray);
     $upcomingList = '';
-    for (let i = 0; i < upcomingArray.length; i++) {
-      $upcomingList += createUpcoming(upcomingArray[i]);
+    for (let i = 0; i < transformedArray.length; i++) {
+      $upcomingList += createUpcoming(transformedArray[i]);
     }
     $('#upcoming-order').prepend($upcomingList);
   };
