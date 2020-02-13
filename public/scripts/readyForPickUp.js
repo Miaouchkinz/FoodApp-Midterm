@@ -1,21 +1,22 @@
 $(document).ready(function () {
 
-
+  // ???? more than 5 upcoming order -> next line?
   // Order Is Ready button - put the avatar into ready for pickup table
-  $('body').on('click', '#orderIsReady',function(){
-    const orderNumber = $('#takeOrderNumber').text();
-    const name = $('#takeName').text();
+  $('body').on('click', '.orderIsReady',function(){
+    const name = $(this).attr('value');
+    const orderNumber = $(this).attr('title');
+    const pic_id = $(this).attr('alt');
     const pickupReadyPerson = `<div class="col-lg-2 my-auto mr-5">
-    <img src="/images/user-circle1.png"><br>
+    <img src="/images/user-circle${pic_id}.png"><br>
     <p id="putOrderNumber">
-    ${orderNumber}
+    Order Number: ${orderNumber}
     </p>
     <p>
     ${name}
     </p>
     </div>`;
     console.log('pickupReadyPerson:  ', pickupReadyPerson)
-    $('#readyForPickupRow').prepend(pickupReadyPerson);
+    $('#readyForPickupRow').append(pickupReadyPerson);
   });
 
 
