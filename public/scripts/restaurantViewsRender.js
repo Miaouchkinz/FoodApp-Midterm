@@ -1,9 +1,11 @@
 $(document).ready(function () {
-  $('.place-order').hide();
+  // $('.place-order').hide();
+  // $('.waiting').hide();
 
   // New tweet HTML format
   const createRestaurantViews = function(mealItem) {
-    console.log(mealItem);
+    // console.log(mealItem);
+
     const $restaurantViews = `
     <section class="new-order">
     <div class="conainer-lg">
@@ -75,37 +77,15 @@ $(document).ready(function () {
       <div class="col-lg-2"></div>
       <div class="col"></div>
       <div class="w-100"></div>
+
       <div class="col-lg-1 my-auto"></div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle4.png" alt="user-circle3"><br>
-        <p>
-          new-order 1
-        </p>
+
+      <div id="readyForPickupRow" class="col-lg-10">
+
+
+
       </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle5.png" alt="user-circle3"><br>
-        <p>
-          new-order 2
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle6.png" alt="user-circle3"><br>
-        <p>
-          new-order 3
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle4.png" alt="user-circle3"><br>
-        <p>
-          new-order 4
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle5.png" alt="user-circle3"><br>
-        <p>
-          new-order 5
-        </p>
-      </div>
+
       <div class="col-lg-1 my-auto"></div>
     </div>
   </div>
@@ -116,14 +96,12 @@ $(document).ready(function () {
   <div class="row new-order-row">
     <div class="col-lg-1"></div>
     <div class="col-lg-2 avatar my-auto">
-      <img src="/images/user-circle4.png" alt="user">
+      <img src="/images/user-circle1.png" alt="user">
       <br>
-      <p>
-        mikymouse@amail.com
-      </p>
+      <p id="takeName">Mike</p>
     </div>
     <div class="col-lg-6">
-      <p>order-list</p>
+      <p id="takeOrderNumber">order ###</p>
       <div class="text-left">
         <p>
           cat_name('sandwich'): name('roast beef') price('$ 0.00')
@@ -138,8 +116,10 @@ $(document).ready(function () {
     </div>
     <div class="col-lg-1"></div>
     <div class="col-lg-2 sms my-auto">
-      <div>
-        sms
+      <div id="orderIsReady">
+        <p>
+        order is ready
+        </p>
       </div>
     </div>
   </div>
@@ -147,14 +127,70 @@ $(document).ready(function () {
 </section>
   `;
 
-    return $restaurantViews;
-  };
+
+  return $restaurantViews;
+};
+
+
+
+
+
+
+/*
+
+      <div class="col-lg-2 my-auto">
+        <img src="/images/user-circle1.png"><br>
+        <p id="putOrderNumber">
+        new-order 1
+        </p>
+        <p>
+        Name
+        </p>
+      </div>
+      <div class="col-lg-2 my-auto">
+        <img src="/images/user-circle2.png"><br>
+        <p>
+          new-order 2
+          </p>
+          <p>
+          Name
+        </p>
+      </div>
+      <div class="col-lg-2 my-auto">
+        <img src="/images/user-circle3.png"><br>
+        <p>
+          new-order 3
+          </p>
+          <p>
+          Name
+        </p>
+      </div>
+      <div class="col-lg-2 my-auto">
+        <img src="/images/user-circle1.png"><br>
+        <p>
+          new-order 4
+          </p>
+          <p>
+          Name
+        </p>
+      </div>
+      <div class="col-lg-2 my-auto">
+        <img src="/images/user-circle2.png"><br>
+        <p>
+          new-order 5
+          </p>
+          <p>
+          Name
+        </p>
+      </div>
+
+*/
 
 
 
   // Rendering taken from [{}] Json format
-  const renderRestaurantViews = function (menuItemArray) {
-
+  const renderRestaurantViews = function (pickupArray) {
+    // console.log(pickupArray)
     $restaurantViews = createRestaurantViews();
     $('#restaurant-views').prepend($restaurantViews);
   };
@@ -163,7 +199,7 @@ $(document).ready(function () {
   const loadRestaurantViews = function (menuItem) {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:8080/api/menu/${menuItem}`
+      url: `http://localhost:8080/api/admin/orders/ready_for_pickup`
     })
       .then(renderRestaurantViews);
   };
