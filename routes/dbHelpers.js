@@ -77,6 +77,41 @@ const dbHelpers = db => {
     `, [id])
   };
 
+  const getOrderInfo = (orderNumber) => {
+    return db.query(`
+    SELECT
+      meal_items.name AS meal_item,
+      order_items.quantity,
+      clients.name AS client_name,
+      clients.phone_number AS phone_number
+    FROM order_items
+    JOIN meal_items ON meal_items.id = meal_item_id
+    JOIN orders ON order_id = orders.id
+    JOIN clients ON clients.id = client_id
+    WHERE orders.id = $1
+    `, [orderNumber]);
+  };
+
+  const createOrder = (userId) => {
+    return db.query(`
+      INSERT INTO orders (client_id)
+      VALUES ($1)
+      RETURNING orders.id
+    `, [userId]);
+  };
+
+  const insertOrderItems = (cart_items, order_id) => {
+    const prepared_items = cart_items.map( (item) => {
+      return db.query(`
+        INSERT INTO order_items (meal_item_id, order_id, quantity)
+        VALUES ($1, $2, $3)
+      `, [item.id, order_id, item.qty])
+    });
+
+    return Promise.all(prepared_items);
+
+  };
+
   return {
     getAllUsers,
     getMenuItemsByCategory,
@@ -85,7 +120,10 @@ const dbHelpers = db => {
     getCompletedOrders,
     getLatestOrder,
     orderComplete,
-    orderPaid
+    orderPaid,
+    getOrderInfo,
+    createOrder,
+    insertOrderItems
   };
 }
 

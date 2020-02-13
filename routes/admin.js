@@ -1,7 +1,7 @@
 /*
- * All routes for Menu are defined here
- * Since this file is loaded in server.js into api/menu,
- *   these routes are mounted onto /menu
+ * All routes for Admin / Restaurant View are defined here
+ * Since this file is loaded in server.js into api/admin,
+ *   these routes are mounted onto admin
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
