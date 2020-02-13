@@ -131,31 +131,8 @@ $(document).ready(function () {
   return $restaurantViews;
 };
 
-// ** It did not working!**//
-// $('#orderIsReady').on('click', function(){
-//   console.log('takeOrderNumber');
-//   const orderNumber = $('#takeOrderNumber').text();
-//   console.log(orderNumber);
-//   $('#putOrderNumber').prepend('orderNumber');
-// });
 
-// I had to grab the 'body' tag to make 'place order button' clickable.
-$('body').on('click', '#orderIsReady',function(){
-  const orderNumber = $('#takeOrderNumber').text();
-  const name = $('#takeName').text();
-  const pickupReadyPerson =
 
-  `<div class="col-lg-2 my-auto mr-5">
-  <img src="/images/user-circle1.png"><br>
-  <p id="putOrderNumber">
-  ${orderNumber}
-  </p>
-  <p>
-  ${name}
-  </p>
-  </div>`;
-  $('#readyForPickupRow').prepend(pickupReadyPerson);
-});
 
 
 
@@ -212,8 +189,8 @@ $('body').on('click', '#orderIsReady',function(){
 
 
   // Rendering taken from [{}] Json format
-  const renderRestaurantViews = function (menuItemArray) {
-
+  const renderRestaurantViews = function (pickupArray) {
+    // console.log(pickupArray)
     $restaurantViews = createRestaurantViews();
     $('#restaurant-views').prepend($restaurantViews);
   };
@@ -222,7 +199,7 @@ $('body').on('click', '#orderIsReady',function(){
   const loadRestaurantViews = function (menuItem) {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:8080/api/menu/${menuItem}`
+      url: `http://localhost:8080/api/admin/orders/ready_for_pickup`
     })
       .then(renderRestaurantViews);
   };

@@ -10,7 +10,7 @@ const router  = express.Router();
 const dbHelpers = require('./dbHelpers');
 
 const menuRoutes = (db) => {
-  const {getMenuItemsByCategory} = dbHelpers(db);
+  const {getMenuItemsByCategory, getAllMenuItems} = dbHelpers(db);
 
   router.get("/:category", (req, res) => {
     const category = req.params.category;
@@ -20,7 +20,19 @@ const menuRoutes = (db) => {
       })
       .catch(err => {
         res
-          .status(500) // TOFIX: check to see what status code to use here.
+          .status(500)
+          .json( {error: err.message})
+      });
+  });
+
+  router.get("/", (req, res) => {
+    getAllMenuItems()
+      .then( (menuItems) => {
+        res.status(201).json(menuItems.rows);
+      })
+      .catch(err => {
+        res
+          .status(500)
           .json( {error: err.message})
       });
   });
