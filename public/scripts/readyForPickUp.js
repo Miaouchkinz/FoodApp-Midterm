@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-  // ???? more than 5 upcoming order -> next line?
   // Order Is Ready button - put the avatar into ready for pickup table
   $('body').on('click', '.orderIsReady',function(){
+    // Move avatar from upcoming list into pickup
     const name = $(this).attr('value');
     const orderNumber = $(this).attr('title');
     const pic_id = $(this).attr('alt');
@@ -15,8 +15,24 @@ $(document).ready(function () {
     ${name}
     </p>
     </div>`;
-    console.log('pickupReadyPerson:  ', pickupReadyPerson)
+
     $('#readyForPickupRow').append(pickupReadyPerson);
+
+    // Notify client to order number in waiting
+    const notifyClientWaiting= `
+    <h3>Order number: ${orderNumber}</h3>
+    <h3>Name: ${name}</h3>
+    <p>
+    Thank you for your order<br>
+    Your order will be ready in 15 min<br>
+  </p>
+  <p>
+    We will notify you via SMS message when it's ready to pick up
+  </p>`;
+
+    $('#waitingOrderNumber').append(notifyClientWaiting);
+
+
   });
 
 

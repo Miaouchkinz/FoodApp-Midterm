@@ -202,6 +202,7 @@ body {
     font-family: 'Bungee', cursive;
   }
 
+  /* waiting */
   .waiting {
     margin: 50px;
     background-color: #EEE;
@@ -212,6 +213,7 @@ body {
     font-family: 'Bungee', cursive;
   }
 
+  /* ready for pickup row */
   #readyForPickupRow {
     display: flex;
     justify-content: flex-start;

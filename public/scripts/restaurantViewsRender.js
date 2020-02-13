@@ -90,69 +90,12 @@ $(document).ready(function () {
     </div>
   </div>
 </section>
-
-
-
   `;
 
 
   return $restaurantViews;
 };
 
-
-
-
-
-
-/*
-
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle1.png"><br>
-        <p id="putOrderNumber">
-        new-order 1
-        </p>
-        <p>
-        Name
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle2.png"><br>
-        <p>
-          new-order 2
-          </p>
-          <p>
-          Name
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle3.png"><br>
-        <p>
-          new-order 3
-          </p>
-          <p>
-          Name
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle1.png"><br>
-        <p>
-          new-order 4
-          </p>
-          <p>
-          Name
-        </p>
-      </div>
-      <div class="col-lg-2 my-auto">
-        <img src="/images/user-circle2.png"><br>
-        <p>
-          new-order 5
-          </p>
-          <p>
-          Name
-        </p>
-      </div>
-
-*/
 
 
 
