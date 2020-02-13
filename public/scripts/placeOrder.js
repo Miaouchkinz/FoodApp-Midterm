@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 // Order Is Ready button with tip- put the avatar into ready for pickup table
-$('body').on('click', '#place-order',function(){
+const notifyClientWaiting = function(){
   // console.log('id: place-order');
   const notifyClientWaiting= `
   <section class="waiting">
@@ -49,12 +49,26 @@ $('body').on('click', '#place-order',function(){
 </div>
 </div>
 </section>`;
+return notifyClientWaiting;
+//   // $('#waitingOrderNumber').append(notifyClientWaiting);
+//   $('#waiting').append(notifyClientWaiting);
+//   $(this).closest( ".place-order" ).hide();
+};
 
-  // $('#waitingOrderNumber').append(notifyClientWaiting);
-  $('#waiting').append(notifyClientWaiting);
-  $(this).closest( ".place-order" ).hide();
-});
 
+  const renderWaitingForClient = function () {
+    $('#waiting').append(notifyClientWaiting);
+  };
+
+  const waitingForClient = function () {
+    $.ajax({
+      method: 'GET',
+      url: `http://http://localhost:8080/api/orders/:id`
+    })
+      .then(renderWaitingForClient);
+  };
+
+////////////////////////////////////////////////////////////////////////////////////
 
   const getCartItemAndQty = () => {
     let cartItems = []
@@ -83,7 +97,7 @@ $('body').on('click', '#place-order',function(){
         })
       .then(() => {
         localStorage.clear();
-      })
+      }).then(waitingForClient); // <---------------YoonSoon
       //TO ADD: .then(render waiting page function)
   })
 
