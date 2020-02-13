@@ -63,7 +63,7 @@ $(document).ready(function () {
   </section>
 
   <section class="pick-up">
-  <div class="conainer-lg">
+  <div class="conainer-lg ">
     <div class="row pick-up-row">
       <div class="col-lg-1"></div>
       <div class="col-lg-4 text-left">
@@ -78,7 +78,7 @@ $(document).ready(function () {
       <div class="col"></div>
       <div class="w-100"></div>
 
-      <div class="col-lg-1 my-auto"></div>
+      <div class="col-lg-1"></div>
 
       <div id="readyForPickupRow" class="col-lg-10">
 
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
       </div>
 
-      <div class="col-lg-1 my-auto"></div>
+      <div class="col-lg-1"></div>
     </div>
   </div>
 </section>

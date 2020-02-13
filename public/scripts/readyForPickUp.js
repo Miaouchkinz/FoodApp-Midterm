@@ -6,7 +6,7 @@ $(document).ready(function () {
     const name = $(this).attr('value');
     const orderNumber = $(this).attr('title');
     const pic_id = $(this).attr('alt');
-    const pickupReadyPerson = `<div class="col-lg-2 my-auto mr-5">
+    const pickupReadyPerson = `<div class="col-lg-2 mr-4">
     <img src="/images/user-circle${pic_id}.png"><br>
     <p id="putOrderNumber">
     Order Number: ${orderNumber}
