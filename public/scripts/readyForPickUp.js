@@ -31,7 +31,7 @@ $(document).ready(function () {
   </p>`;
 
     $('#waitingOrderNumber').append(notifyClientWaiting);
-
+    $(this).closest( ".upcomming-order" ).hide();
 
   });
 

@@ -6,17 +6,11 @@ const createUpcoming = function(upcoming) {
   const meal_item = upcoming.meal_item;
   const pic_id = (order_number % 3) + 1;
   const quantity = upcoming.item_qty
-  // console.log('pic_id:  ', pic_id);
-  // let meal_item = '<li>';
   let eachMeal_item = '';
-  // (upcoming.meal_items).forEach(element => meals += '<ul>' + element + '<ul>');
+
   for (let element of upcoming.meal_item) {
     eachMeal_item += `<p>${element} &nbsp  ${quantity}<p>`;
   }
-  // eachMeal_item += '';
-  // console.log('upcoming:  ', upcoming);
-  console.log('eachMeal_item: ', eachMeal_item);
-  // console.log('meals: ', meals);
   const upcomingHTML = `
   <section class="upcomming-order">
   <div class="conainer-lg">
@@ -47,6 +41,7 @@ const createUpcoming = function(upcoming) {
     </div>
   </div>
   </section>
+
   `;
 
   return upcomingHTML;
