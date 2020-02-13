@@ -125,6 +125,7 @@ $(document).ready(function () {
   </div>
 </div>
 </section>
+<script type="text/javascript" src="/scripts/readyForPickUp.js"></script>
   `;
 
 
