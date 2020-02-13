@@ -10,7 +10,7 @@ const router  = express.Router();
 const dbHelpers = require('./dbHelpers');
 
 const orderRoutes = (db) => {
-  const { getOrderInfo } = dbHelpers(db);
+  const { getOrderInfo, createOrder, insertOrderItems } = dbHelpers(db);
   //get info for a particular order
   // used for waiting page
   router.get("/:id", (req, res) => {
@@ -24,6 +24,19 @@ const orderRoutes = (db) => {
           .status(500)
           .json( {error: err.message} )
       });
+  });
+
+  // create new order and order_item entries when someone places an order
+  router.post("/new", (req, res) => {
+    let data = {
+      cart_items: req.body.cartItems,
+      user_id: req.session.user_id
+    }
+    return createOrder(data.user_id)
+      .then( (orderData) => insertOrderItems(data.cart_items, orderData.rows[0].id))
+      .then(() => {
+        return res.status(201)
+      })
   });
 
   return router;
