@@ -56,8 +56,9 @@ const dbHelpers = db => {
     JOIN orders ON order_id = orders.id
     JOIN clients ON client_id = clients.id
     WHERE orders.is_complete = false
+    GROUP BY orders.id, clients.name, order_items.quantity, meal_items.name
     ORDER BY orders.id DESC
-    LIMIT 1;
+    LIMIT 2;
     `)
   };
 
@@ -105,6 +106,7 @@ const dbHelpers = db => {
       return db.query(`
         INSERT INTO order_items (meal_item_id, order_id, quantity)
         VALUES ($1, $2, $3)
+        RETURNING *
       `, [item.id, order_id, item.qty])
     });
 
