@@ -77,6 +77,21 @@ const dbHelpers = db => {
     `, [id])
   };
 
+  const getOrderInfo = (orderNumber) => {
+    return db.query(`
+    SELECT
+      meal_items.name AS meal_item,
+      order_items.quantity,
+      clients.name AS client_name,
+      clients.phone_number AS phone_number
+    FROM order_items
+    JOIN meal_items ON meal_items.id = meal_item_id
+    JOIN orders ON order_id = orders.id
+    JOIN clients ON clients.id = client_id
+    WHERE orders.id = $1
+    `, [orderNumber]);
+  };
+
   return {
     getAllUsers,
     getMenuItemsByCategory,
@@ -85,7 +100,8 @@ const dbHelpers = db => {
     getCompletedOrders,
     getLatestOrder,
     orderComplete,
-    orderPaid
+    orderPaid,
+    getOrderInfo
   };
 }
 
