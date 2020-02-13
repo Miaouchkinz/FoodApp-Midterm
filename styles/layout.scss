@@ -83,7 +83,7 @@ body {
   }
 
   div.col-lg-9.meal-items-row-container {
-    border: 3px solid gray;
+
     border-radius: 10px;
   }
 
@@ -193,13 +193,24 @@ body {
   /* up-comming order */
 
   .upcomming-order {
-    margin: 50px;
+    margin: 50px 100px;
     background-color: #EEE;
     border-radius: 10px;
-    border: 3px solid gray;
+    border: 1px solid gray;
     padding: 20px 20px;
     text-align: center;
     font-family: 'Bungee', cursive;
+  }
+
+  .takeOrderNumber {
+    font-family: 'Bungee', cursive;
+    font-size: 2rem;
+  }
+
+  .takeOrderList {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   /* waiting */

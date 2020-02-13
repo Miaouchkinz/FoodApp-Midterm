@@ -21,9 +21,10 @@ const createUpcoming = function(upcoming) {
         <br>
         <p id="takeName">${name}</p>
       </div>
-      <div class="col-lg-6 my-auto align-middle">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-5 my-auto align-middle">
         <p class="takeOrderNumber">Order Number: ${order_number}</p>
-        <div class="text-left">
+        <div class="takeOrderList text-left">
           <p>
             ${eachMeal_item}
           </p>

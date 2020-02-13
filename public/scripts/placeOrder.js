@@ -97,7 +97,7 @@ return notifyClientWaiting;
         })
       .then(() => {
         localStorage.clear();
-      }).then(waitingForClient); // <---------------YoonSoon
+      }).then(() => waitingForClient); // <---------------YoonSoon
       //TO ADD: .then(render waiting page function)
   })
 
