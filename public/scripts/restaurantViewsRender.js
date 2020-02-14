@@ -7,15 +7,13 @@ $(document).ready(function () {
     console.log('latestOrder', latestOrder[0]);
     console.log('latestOrder', latestOrder);
 
-
-
     const order_number = latestOrder.order_number;
     const name = latestOrder.name;
     const item_qty = latestOrder.item_qty;
     const meal_item = latestOrder.meal_item;
 
 
-    const $restaurantViews = `
+/*
     <section class="new-order">
     <div class="conainer-lg">
       <div class="row new-order-row">
@@ -70,6 +68,11 @@ $(document).ready(function () {
       </div>
     </div>
   </section>
+*/
+
+
+    const $restaurantViews = `
+
 
   <section class="pick-up">
   <div class="conainer-lg ">
@@ -131,6 +134,7 @@ $(document).ready(function () {
     $('.meal-items').remove();
     $('.menu-category').remove();
     $('.cart').replaceWith('<div></div>');
+    $('#waiting').hide();
     loadRestaurantViews('sandwich');
     // loadUpcoming(); //TOFIX
   });
