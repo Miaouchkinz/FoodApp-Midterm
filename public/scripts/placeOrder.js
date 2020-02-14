@@ -49,9 +49,6 @@ const notifyClientWaiting = function(id){
 </div>
 </section>`;
 return notifyClientWaiting;
-//   // $('#waitingOrderNumber').append(notifyClientWaiting);
-//   $('#waiting').append(notifyClientWaiting);
-//   $(this).closest( ".place-order" ).hide();
 };
 
 
@@ -63,7 +60,6 @@ return notifyClientWaiting;
   };
 
   const waitingForClient = function (id) {
-    console.log(id);
     $.ajax({
       method: 'GET',
       url: `/api/orders/${id}`
@@ -86,12 +82,8 @@ return notifyClientWaiting;
 
     return cartItems;
   }
-  // create event.handler that triggers above
-  // pass info to ajax post to create order
-  // once all is done, it should clear cart and render waiting page
+
   $('#place-order').click(function() {
-    // getCartItemAndQty()
-    //   .then( (cartItems) => {
         $.ajax({
           method: 'POST',
           url: '/api/orders/new',

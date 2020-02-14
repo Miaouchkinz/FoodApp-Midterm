@@ -21,7 +21,6 @@ const orderIsPlaced = () => {
         to: '+15148240269'
       })
     });
-    // .then(message => console.log('twilio', message.sid));
 };
 
 const orderIsReady = () => {

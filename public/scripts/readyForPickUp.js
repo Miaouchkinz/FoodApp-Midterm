@@ -71,7 +71,6 @@ $(document).ready(function () {
 </div>
 </section>`;
 
-    // $('#waitingOrderNumber').append(notifyClientWaiting);
     $('#waiting').append(notifyClientWaiting);
     $(this).closest( ".upcomming-order" ).hide();
 
@@ -92,20 +91,14 @@ $(document).ready(function () {
     return pickupReadyPerson;
   };
 
-  //Rendering taken from [{}] Json format
   const renderReadyForPickUp = function (pickupArray) {
-    // console.log('renderReadyForPickUp:  ',pickupArray);
     let pickupList = '';
     for (let i = 0; i < pickupArray.length; i++) {
       pickupList += createPickUp(pickupArray[i]);
-      // console.log('for pickupList:  ',$pickupList);
     }
-    // console.log('pickupList:  ',pickupList);
     $('#readyForPickupRow').prepend(pickupList);
-    // $(".add-to-cart").click(addToCartHandler);
   };
 
-  //Take the JSON
   const readyForPickUpload = function () {
     $.ajax({
       method: 'GET',

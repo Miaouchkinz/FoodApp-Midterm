@@ -53,7 +53,6 @@ const createUpcoming = function(upcoming) {
 };
 
   // Transform Array Object: combine same order id and change meal_item as array
-  // Thank you. Jess
   const combineArr = function(arr) {
     combinedArray = arr.reduce(function (acc, obj){
 
