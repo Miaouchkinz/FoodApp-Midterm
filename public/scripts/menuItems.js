@@ -28,12 +28,12 @@ $(document).ready(function () {
                 <span>
                   <p>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" id="${mealItem.id}" class="add-to-cart btn btn-warning btn-lg">Place to order</button>
+                        <button type="button" id="${mealItem.id}" class="add-to-cart btn btn-warning btn-lg">Add to order</button>
 
                     </div>
                   </p>
                   <p>
-                    $ ${mealPrice}
+                    $${mealPrice}
                   </p>
                 </span>
               </div>
