@@ -10,7 +10,7 @@ const orderIsPlaced = () => {
     .create({
       body: 'Thank you for placing an order with us! Your order will be ready in 15 mins :-)',
       from: '+14382995889',
-      to: '+15148240269'
+      to: '+15145925988'
     })
     .then(() => {
       // To Resto
@@ -30,7 +30,7 @@ const orderIsReady = () => {
   .create({
     body: 'Your order is ready, come on down! :-)',
     from: '+14382995889',
-    to: '+15148240269'
+    to: '+15145925988'
   })
 }
 
