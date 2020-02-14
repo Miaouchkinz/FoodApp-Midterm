@@ -67,22 +67,30 @@ $(document).ready(function () {
   };
 
   $('#sandwich').click(function(){
+    $('.menu-category').find('.menu1-color').removeClass('menu1-color');
     $('.meal-items').remove();
+    $(this).find('img').addClass('menu1-color');
     getMenuItemsByCategory('sandwich');
   });
 
   $('#soup').click(function(){
+    $('.menu-category').find('.menu1-color').removeClass('menu1-color');
     $('.meal-items').remove();
+    $(this).find('img').addClass('menu1-color');
     getMenuItemsByCategory('soup');
   });
 
   $('#salad').click(function(){
+    $('.menu-category').find('.menu1-color').removeClass('menu1-color');
     $('.meal-items').remove();
+    $(this).find('img').addClass('menu1-color');
     getMenuItemsByCategory('salad');
   });
 
   $('#drinks').click(function(){
+    $('.menu-category').find('.menu1-color').removeClass('menu1-color');
     $('.meal-items').remove();
+    $(this).find('img').addClass('menu1-color');
     getMenuItemsByCategory('drinks');
   });
 
