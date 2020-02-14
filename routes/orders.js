@@ -34,10 +34,15 @@ const orderRoutes = (db) => {
       user_id: req.session.user_id
     }
     return createOrder(data.user_id)
-      .then( (orderData) => insertOrderItems(data.cart_items, orderData.rows[0].id))
-      .then(() => {
+      .then((orderData) => insertOrderItems(data.cart_items, orderData.rows[0].id))
+      .then((queryRes) => {
         orderIsPlaced();
-        return res.sendStatus(201);
+        return res.sendStatus(201).json(queryRes.map((item) => item.rows[0]))
+      })
+      .catch(err => {
+        return res
+          .status(500)
+          .json( {error: err.message} )
       })
   });
 

@@ -13,7 +13,6 @@ body {
     display: flex;
     justify-content:space-between;
     align-items: center;
-
     padding: 20px 50px;
 
     .cart {
@@ -22,6 +21,10 @@ body {
     }
   }
 
+  .login-admin {
+    flex-direction: column;
+    display: flex;
+  }
   .restaurant-name {
     margin-top:20px;
     display: flex;
@@ -83,7 +86,7 @@ body {
   }
 
   div.col-lg-9.meal-items-row-container {
-    border: 3px solid gray;
+
     border-radius: 10px;
   }
 
@@ -152,4 +155,83 @@ body {
     border: 3px solid gray;
     padding: 10px 0px;
   }
+
+
+  /* new-order-container */
+
+  .new-order {
+    margin: 50px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 3px solid gray;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  }
+
+  div.sms {
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 3px solid gray;
+  }
+
+  div.col-lg-6.order-list {
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 3px solid gray;
+  }
+
+  /* pick-up */
+
+  .pick-up {
+    margin: 50px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 3px solid gray;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  }
+
+  /* up-comming order */
+
+  .upcomming-order {
+    margin: 50px 100px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  }
+
+  .takeOrderNumber {
+    font-family: 'Bungee', cursive;
+    font-size: 2rem;
+  }
+
+  .takeOrderList {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* waiting */
+  .waiting {
+    margin: 50px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 3px solid gray;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  }
+
+  /* ready for pickup row */
+  #readyForPickupRow {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
 }
