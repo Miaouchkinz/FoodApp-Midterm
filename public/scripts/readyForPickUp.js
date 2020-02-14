@@ -2,10 +2,14 @@ $(document).ready(function () {
 
   // Order Is Ready button - put the avatar into ready for pickup table
   $('body').on('click', '.orderIsReady',function(){
-    // Move avatar from upcoming list into pickup
     const name = $(this).attr('value');
     const orderNumber = $(this).attr('title');
     const pic_id = $(this).attr('alt');
+
+    $.post(`/api/admin/orders/${orderNumber}`,
+      {data: { order_id: orderNumber, is_complete: true}}
+    )
+    // Move avatar from upcoming list into pickup
     const pickupReadyPerson = `<div class="col-lg-2 mr-4">
     <img src="/images/user-circle${pic_id}.png"><br>
     <p id="putOrderNumber">
