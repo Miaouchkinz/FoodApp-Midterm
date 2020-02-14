@@ -32,7 +32,7 @@ const updateQuantityCounter = (id, increase) => {
   let qtyCounter = $('#qty-' + id);
   let quantity = Number(qtyCounter.text());
   if (increase) quantity++;
-  else quantity--;
+  else if (quantity > 0) quantity--;
 
   qtyCounter.text(quantity);
 }
@@ -80,6 +80,7 @@ const addToCartHandler = (e) => {
 }
 
 const removeFromCartHandler = (e) => {
+  if ($(`#qty-${e.target.id}`).text() <= 0) return;
   $.ajax({
     method: 'GET',
     url: '/api/menu/'

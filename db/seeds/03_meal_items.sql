@@ -58,7 +58,7 @@ VALUES
 -- SOUP
 -- 6
 (
-  'Pumpkin',
+  'Pumpkin Soup',
   'A rich and suprisingly creamy vegan pumpkin soup.',
   'pumpkin, garlic, onion, coconut milk',
   700,
@@ -94,7 +94,7 @@ VALUES
 ),
 -- 10
 (
-  'Ginger Carrot',
+  'Ginger Carrot Soup',
   'Healthy soup made from fresh ingredients.',
   'ginger, carrot, onion, coconut milk',
   800,

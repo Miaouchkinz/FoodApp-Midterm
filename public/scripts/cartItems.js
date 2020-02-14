@@ -1,32 +1,14 @@
 const createCartElements = (cartItem) => {
   const itemPrice = (cartItem.qty * cartItem.price / 100).toFixed(2);
   const $cartElement = `
-    <div id="meal-item-${cartItem.id}" class="meal-items container-lg">
-      <div class="row meal-items-row">
-        <div class="col-lg-3 my-auto">
-          <h3>${cartItem.name}</h3>
-        </div>
-
-        <div class="col-lg-9 meal-items-row-container">
-            <div class="row meal-items-row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-3 price-quantity my-auto">
-                  <span>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" id="${cartItem.id}" class="remove-from-cart btn btn-danger btn-lg"> - </button>
-                    </div>
-                    <span id="qty-${cartItem.id}">${cartItem.qty}</span>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" id="${cartItem.id}" class="add-to-cart btn btn btn-success btn-lg"> + </button>
-                    </div>
-                  </span>
-                </div>
-                <div class="col-lg-3 price-quantity my-auto">
-                  <p>$<span class="item-price">${itemPrice}</span></p>
-                </div>
-            </div>
-          </div>
-        </div>
+    <div id="meal-item-${cartItem.id}" class="order-items container-lg">
+      <h3>${cartItem.name}</h3>
+      <div class="quantity-container">
+          <button type="button" id="${cartItem.id}" class="remove-from-cart btn btn-danger"> - </button>
+          <span id="qty-${cartItem.id}">${cartItem.qty}</span>
+          <button type="button" id="${cartItem.id}" class="add-to-cart btn btn-success"> + </button>
+      </div>
+      <div class="total-price">$<span class="item-price">${itemPrice}</span></div>
       </div>
     </div>
   `;

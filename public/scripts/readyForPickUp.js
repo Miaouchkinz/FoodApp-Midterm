@@ -2,25 +2,25 @@ $(document).ready(function () {
 
   // Order Is Ready button - put the avatar into ready for pickup table
   $('body').on('click', '.orderIsReady',function(){
-    // $('.orderIsReady').on('click',function(){
-
-  // Move avatar from upcoming list into pickup
     const name = $(this).attr('value');
     const orderNumber = $(this).attr('title');
     const pic_id = $(this).attr('alt');
-    const pickupReadyPerson =
-      `<div class="col-lg-2 mr-4">
-          <img src="/images/user-circle${pic_id}.png">
-          <br>
-          <p id="putOrderNumber">
-            Order Number: ${orderNumber}
-          </p>
-          <p>
-            ${name}
-          </p>
-        </div>`;
-// console.log("EHEHEHEHH")
-console.log($(this))
+
+    $.post(`/api/admin/orders/${orderNumber}`,
+      {data: { order_id: orderNumber, is_complete: true}}
+    )
+    // Move avatar from upcoming list into pickup
+    const pickupReadyPerson = `<div class="col-lg-2 mr-4">
+    <img src="/images/user-circle${pic_id}.png">
+    <br>
+    <p id="putOrderNumber">
+    Order Number: ${orderNumber}
+    </p>
+    <p>
+    ${name}
+    </p>
+    </div>`;
+
     $('#readyForPickupRow').append(pickupReadyPerson);
 
     // Notify client to order number in waiting

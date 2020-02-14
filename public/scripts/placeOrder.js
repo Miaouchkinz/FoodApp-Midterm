@@ -2,8 +2,6 @@ $(document).ready(function () {
 
 // Order Is Ready button with tip- put the avatar into ready for pickup table
 const notifyClientWaiting = function(id){
-  console.log('id: ',id);
-  // console.log('id: place-order');
   const notifyClientWaiting= `
   <section class="waiting">
   <div class="conainer-lg">
@@ -102,8 +100,9 @@ return notifyClientWaiting;
           }
         })
         .then((queryRes) => waitingForClient(queryRes[0].order_id))
-        .then(() => localStorage.clear()); // <---------------YoonSoon
-      //TO ADD: .then(render waiting page function)
+        .then(() => localStorage.clear())
+        .then(() => updateCartCounter())
+        .catch(err => console.log(err));
     })
 
 });

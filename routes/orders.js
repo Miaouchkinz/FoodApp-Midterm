@@ -8,6 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const dbHelpers = require('./dbHelpers');
+const { orderIsPlaced } = require('../send-sms');
 
 const orderRoutes = (db) => {
   const { getOrderInfo, createOrder, insertOrderItems } = dbHelpers(db);
@@ -35,6 +36,7 @@ const orderRoutes = (db) => {
     return createOrder(data.user_id)
       .then((orderData) => insertOrderItems(data.cart_items, orderData.rows[0].id))
       .then((queryRes) => {
+        orderIsPlaced();
         return res.status(201).json(queryRes.map((item) => item.rows[0]))
       })
       .catch(err => {

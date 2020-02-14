@@ -8,6 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const dbHelpers = require('./dbHelpers');
+const { orderIsReady } = require('../send-sms');
 
 const adminRoutes = (db) => {
   const {
@@ -58,13 +59,16 @@ const adminRoutes = (db) => {
   router.post("/orders/:id", (req, res) => {
     let data = {
       order_id: req.params.id,
-      is_complete: req.params.is_complete,
-      is_paid: req.params.is_paid
+      is_complete: req.body.is_complete,
+      is_paid: req.body.is_paid
     }
     // update is_complete
     if (!data.is_complete) {
       orderComplete(data.order_id)
-        .then( (res) => res.status(201))
+        .then( () => {
+          orderIsReady();
+          return res.sendStatus(201);
+        })
         .catch(err => {
           res
             .status(500)
@@ -72,9 +76,9 @@ const adminRoutes = (db) => {
         });
     }
     // update is_paid
-    if (!data.is_paid) {
+    else if (!data.is_paid) {
       orderPaid(data.order_id)
-        .then( (res) => res.status(201))
+        .then( (res) => res.sendStatus(201))
         .catch(err => {
           res
             .status(500)

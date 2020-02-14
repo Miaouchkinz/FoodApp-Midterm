@@ -80,7 +80,51 @@ body {
     font-weight: bold;
   }
 
-  .col-lg-3.my-auto h3 {
+  .order-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 2rem 4rem;
+    margin: 4rem 6rem;
+    background-color: #EEE;
+    border-radius: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    .quantity-container {
+      display: flex;
+
+      span {
+        font-weight: 900;
+        font-size: 1.5rem;
+        margin: 0 1.75rem;
+      }
+      .add-to-cart,
+      .remove-from-cart {
+        font-size: 2rem;
+        line-height: 0;
+        padding: 1rem 0.75rem 1.125rem;
+        font-weight: 900;
+      }
+
+      .remove-from-cart {
+        padding-bottom: 1.375rem;
+      }
+
+    }
+
+    h3 {
+      font-family: 'Bungee', cursive;
+    }
+    .total-price {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 2rem;
+    }
+  }
+
+  .my-auto h3 {
     font-family: 'Bungee', cursive;
   }
 
@@ -101,11 +145,6 @@ body {
 
   }
 
-  div.col-lg-9.meal-items-row-container {
-
-    border-radius: 10px;
-  }
-
   div.col-lg-3.price-quantity {
     border: 3px solid gray;
     border-radius: 10px;
@@ -121,7 +160,6 @@ body {
     margin: 50px;
     background-color: #EEE;
     border-radius: 10px;
-    border: 2px solid gray;
     padding: 20px 0px;
     margin: 50px 100px;
     text-align: center;
@@ -146,6 +184,9 @@ body {
   }
 
   div.col-lg-3.place-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px solid gray;
     margin: 0px;
     margin-top: 30px;
@@ -210,6 +251,11 @@ body {
   }
 
   /* up-comming order */
+
+  .upcoming-header {
+    font-family: 'Bungee', cursive;
+    padding-left: 3rem;
+  }
 
   .upcomming-order {
     margin: 50px 100px;

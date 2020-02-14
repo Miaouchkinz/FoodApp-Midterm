@@ -79,9 +79,6 @@ $(document).ready(function () {
       <div class="col-lg-1"></div>
       <div class="col-lg-4 text-left">
         <p>
-          <h2>COMPLTETED</h2>
-        </p>
-        <p>
           <h2>READY FOR PICK UP</h2>
         </p>
       </div>
@@ -101,6 +98,7 @@ $(document).ready(function () {
     </div>
   </div>
 </section>
+<h2 class="upcoming-header"> UPCOMING ORDERS </h2>
   `;
 
 
