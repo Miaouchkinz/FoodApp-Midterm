@@ -100,7 +100,7 @@ $(document).ready(function () {
       pickupList += createPickUp(pickupArray[i]);
       // console.log('for pickupList:  ',$pickupList);
     }
-    console.log('pickupList:  ',pickupList);
+    // console.log('pickupList:  ',pickupList);
     $('#readyForPickupRow').prepend(pickupList);
     // $(".add-to-cart").click(addToCartHandler);
   };
