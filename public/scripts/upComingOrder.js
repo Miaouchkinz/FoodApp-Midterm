@@ -7,10 +7,14 @@ const createUpcoming = function(upcoming) {
   const pic_id = (order_number % 3) + 1;
   const quantity = upcoming.item_qty
   let eachMeal_item = '';
-
-  for (let element of upcoming.meal_item) {
-    eachMeal_item += `<p>${element} &nbsp  ${quantity}<p>`;
+  if (Array.isArray(upcoming.meal_item)) {
+    for (let element of upcoming.meal_item) {
+      eachMeal_item += `<p>${element} &nbsp  ${quantity}<p>`;
+    }
+  } else {
+    eachMeal_item += `<p>${upcoming.meal_item} &nbsp  ${quantity}<p>`;
   }
+
   const upcomingHTML = `
   <section class="upcomming-order">
   <div class="conainer-lg">

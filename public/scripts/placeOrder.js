@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
 // Order Is Ready button with tip- put the avatar into ready for pickup table
-const notifyClientWaiting = function(){
+const notifyClientWaiting = function(id){
+  console.log('id: ',id);
   // console.log('id: place-order');
   const notifyClientWaiting= `
   <section class="waiting">
@@ -35,8 +36,8 @@ const notifyClientWaiting = function(){
       <img src="/images/Catering3.png" alt="step-bar">
       <div id="waitingOrderNumber"></div>
 
-  <h3>Order number: ${orderNumber}</h3>
-  <h3>Name: ${name}</h3>
+  <h3>Order number: ${id}</h3>
+  <h3></h3>
   <p>
   Thank you for your order<br>
   Your order will be ready in 15 min<br>
@@ -56,16 +57,21 @@ return notifyClientWaiting;
 };
 
 
-  const renderWaitingForClient = function () {
-    $('#waiting').append(notifyClientWaiting);
+  const renderWaitingForClient = function (id) {
+
+    $('#meal-items').hide();
+    $('.place-order').hide();
+    $('#waiting').append(notifyClientWaiting(id));
   };
 
-  const waitingForClient = function () {
+  const waitingForClient = function (id) {
+    console.log(id);
     $.ajax({
       method: 'GET',
-      url: `http://http://localhost:8080/api/orders/:id`
+      url: `/api/orders/${id}`
     })
-      .then(renderWaitingForClient);
+      .then(() => renderWaitingForClient(id))
+      .catch( (err) => console.log(err));
   };
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -85,7 +91,7 @@ return notifyClientWaiting;
   // create event.handler that triggers above
   // pass info to ajax post to create order
   // once all is done, it should clear cart and render waiting page
-  $('#place-order').click( () => {
+  $('#place-order').click(function() {
     // getCartItemAndQty()
     //   .then( (cartItems) => {
         $.ajax({
@@ -95,10 +101,9 @@ return notifyClientWaiting;
             cartItems: getCartItemAndQty()
           }
         })
-      .then(() => {
-        localStorage.clear();
-      }).then(() => waitingForClient); // <---------------YoonSoon
+        .then((queryRes) => waitingForClient(queryRes[0].order_id))
+        .then(() => localStorage.clear()); // <---------------YoonSoon
       //TO ADD: .then(render waiting page function)
-  })
+    })
 
 });
