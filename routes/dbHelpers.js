@@ -1,9 +1,5 @@
 const dbHelpers = db => {
 
-  const getAllUsers = () => {
-  return db.query(`SELECT * FROM users;`);
-  };
-
   const getMenuItemsByCategory = (category) => {
     return db.query(`
     SELECT
@@ -115,7 +111,6 @@ const dbHelpers = db => {
   };
 
   return {
-    getAllUsers,
     getMenuItemsByCategory,
     getAllMenuItems,
     getUpcomingOrders,
