@@ -1,6 +1,6 @@
 # FoodApp Midterm
 
-Camilo's Café is a simple, single-page application for a restaurant that offers pick-up orders for both the client and restaurant side. It uses uses JQuery, HTML5, Bootstrap, and SCSS on the front-end and Node JS, Express, Postgres on the back-end. 
+Camilo's Café is a simple, single-page application for a restaurant that offers pick-up orders for both the client and restaurant side. It uses JQuery, HTML5, Bootstrap, and SCSS on the front-end and Node JS, Express, Postgres on the back-end. 
 
 The midterm project is our first chance to work in teams and build an app from the ground up. We used Trello to help organize ourselves as well as Draw.io to create our ERDs and Wireframes. 
 
