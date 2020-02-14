@@ -34,6 +34,7 @@ body {
 
   .restaurant-name h2 {
     font-size: 2.5rem;
+    color: maroon;
   }
 
 
@@ -50,6 +51,21 @@ body {
     text-align: center;
     font-family: 'Bungee', cursive;
   }
+
+  .menu1-color {
+    background-color: lightblue;
+  }
+  .menu2-color {
+    background-color: lightblue;
+  }
+  .menu3-color {
+    background-color: lightblue;
+  }
+  .menu4-color {
+    background-color: lightblue;
+  }
+
+
 
   /* meal-items-containers */
 
@@ -212,10 +228,15 @@ body {
 
   .takeOrderList {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 
+  .col-lg-2.sms {
+    padding-top: 10px;
+    background-color: brown;
+    color: snow;
+  }
   /* waiting */
   .waiting {
     margin: 50px;
@@ -233,5 +254,6 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
+
 
 }
