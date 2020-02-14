@@ -4,8 +4,7 @@ $(document).ready(function () {
 
   // New restaurantViews HTML format
   const createRestaurantViews = function(latestOrder) {
-    console.log('latestOrder', latestOrder[0]);
-    console.log('latestOrder', latestOrder);
+
 
     const order_number = latestOrder.order_number;
     const name = latestOrder.name;
