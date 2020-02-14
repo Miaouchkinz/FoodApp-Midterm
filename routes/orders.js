@@ -37,7 +37,7 @@ const orderRoutes = (db) => {
       .then((orderData) => insertOrderItems(data.cart_items, orderData.rows[0].id))
       .then((queryRes) => {
         orderIsPlaced();
-        return res.sendStatus(201).json(queryRes.map((item) => item.rows[0]))
+        return res.status(201).json(queryRes.map((item) => item.rows[0]))
       })
       .catch(err => {
         return res
