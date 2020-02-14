@@ -71,6 +71,7 @@ $(document).ready(function () {
     $('.meal-items').remove();
     $(this).find('img').addClass('menu1-color');
     getMenuItemsByCategory('sandwich');
+    // $(this).scrollTop(1000);
   });
 
   $('#soup').click(function(){
