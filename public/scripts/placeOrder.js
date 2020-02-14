@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
   const getCartItemAndQty = () => {
     let cartItems = []
     let keys = Object.keys(localStorage);
@@ -26,9 +25,8 @@ $(document).ready(function () {
             cartItems: getCartItemAndQty()
           }
         })
-      .then(() => {
-        localStorage.clear();
-      })
+        .then(() => localStorage.clear())
+        .catch(err => console.log(err))
       //TO ADD: .then(render waiting page function)
   })
 
