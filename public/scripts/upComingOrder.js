@@ -3,7 +3,7 @@ $(document).ready(function () {
 const createUpcoming = function(upcoming) {
   const name = upcoming.name;
   const order_number = upcoming.order_number;
-  const meal_item = upcoming.meal_item;
+
   const pic_id = (order_number % 3) + 1;
   const quantity = upcoming.item_qty
   let eachMeal_item = '';
@@ -97,8 +97,10 @@ const createUpcoming = function(upcoming) {
       .then(renderUpcoming);
   };
 
-  $('#upcoming-order-button').click(function(){
+  $('#render-restaurant-views').click(function(){
     loadUpcoming();
   });
 
 });
+
+
