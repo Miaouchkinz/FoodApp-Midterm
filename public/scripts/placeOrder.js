@@ -101,6 +101,7 @@ return notifyClientWaiting;
         })
         .then((queryRes) => waitingForClient(queryRes[0].order_id))
         .then(() => localStorage.clear())
+        .then(() => updateCartCounter())
         .catch(err => console.log(err));
     })
 
